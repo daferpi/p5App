@@ -24,13 +24,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.configureView()
     }
     
     func configureView() {
         // Update the user interface for the detail item.
         if let childrenList = childrenList {
             
-            let annotationsList:[MKPointAnnotation] = childrenList.map({ (child) -> MKPointAnnotation in
+            let annotationsList:[ChildPointAnnotation] = childrenList.map({ (child) -> ChildPointAnnotation in
                 let annotation:ChildPointAnnotation = ChildPointAnnotation()
                 annotation.coordinate = child.location
                 annotation.title = child.name
@@ -55,10 +56,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             annotationView?.annotation = annotation
         }
         
-        let customPointAnnotation = annotation as! ChildPointAnnotation
-        annotationView?.image = customPointAnnotation.photoImage
+        if let customPointAnnotation = annotation as? ChildPointAnnotation {
+            annotationView?.frame.size = CGSize(width: 20, height: 20)
+            annotationView?.image = customPointAnnotation.photoImage.resizeImage(newWidth: 36)
+            annotationView?.layer.cornerRadius = (annotationView?.frame.height)! / 2
+            
+        }
         
         return annotationView
     }
+    
     
 }

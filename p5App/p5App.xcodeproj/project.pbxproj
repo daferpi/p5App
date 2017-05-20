@@ -18,6 +18,7 @@
 		FF9E9B961ED04DAB00E703F7 /* AlumnoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9B951ED04DAB00E703F7 /* AlumnoTableViewCell.swift */; };
 		FF9E9B981ED04F4900E703F7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9B971ED04F4900E703F7 /* MapViewController.swift */; };
 		FF9E9B9A1ED082B900E703F7 /* ChildPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9B991ED082B900E703F7 /* ChildPointAnnotation.swift */; };
+		FF9E9B9C1ED08DA300E703F7 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9B9B1ED08DA300E703F7 /* UIImage+Resize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		FF9E9B951ED04DAB00E703F7 /* AlumnoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlumnoTableViewCell.swift; sourceTree = "<group>"; };
 		FF9E9B971ED04F4900E703F7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FF9E9B991ED082B900E703F7 /* ChildPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildPointAnnotation.swift; sourceTree = "<group>"; };
+		FF9E9B9B1ED08DA300E703F7 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				FF9E9B6E1ED023B500E703F7 /* Assets.xcassets */,
 				FF9E9B701ED023B500E703F7 /* LaunchScreen.storyboard */,
 				FF9E9B731ED023B500E703F7 /* Info.plist */,
+				FF9E9B9B1ED08DA300E703F7 /* UIImage+Resize.swift */,
 			);
 			path = p5App;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF9E9B9C1ED08DA300E703F7 /* UIImage+Resize.swift in Sources */,
 				FF9E9B9A1ED082B900E703F7 /* ChildPointAnnotation.swift in Sources */,
 				FF9E9B6A1ED023B500E703F7 /* DetailViewController.swift in Sources */,
 				FF9E9B681ED023B500E703F7 /* MasterViewController.swift in Sources */,

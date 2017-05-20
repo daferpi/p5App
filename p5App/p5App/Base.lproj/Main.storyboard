@@ -219,10 +219,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Alumnos P5" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <segue destination="MtT-uK-7E1" kind="showDetail" identifier="mapDetail" id="5E6-zU-BYX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="-630.13493253373315"/>
+            <point key="canvasLocation" x="762" y="-653"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
