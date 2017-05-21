@@ -50,5 +50,7 @@
 	<string>using location to display the position in the map</string>
 	<key>NSLocationUsageDescription</key>
 	<string>using location to display the position in the map</string>
+	<key>NSCameraUsageDescription</key>
+	<string>using to display AR points position in camera</string>
 </dict>
 </plist>

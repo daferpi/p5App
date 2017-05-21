@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import HDAugmentedReality
 
 struct Schoolchild {
     let name:String
@@ -27,6 +28,7 @@ struct Schoolchild {
 class MasterViewController: UITableViewController {
 
     let locationManager = CLLocationManager()
+    var arVC:ARViewController!
     var detailViewController: DetailViewController? = nil
     var childList:[Schoolchild] = [Schoolchild(name: "Adria Castro", littleDescription: "Juega al futbol", photo: UIImage(named: "adria")!, location: CLLocationCoordinate2D(latitude: 41.401186, longitude: 2.205785 )),
                                    Schoolchild(name: "Alba Pallardo", littleDescription: "Juega a las supernenas", photo: UIImage(named: "alba")!, location: CLLocationCoordinate2D(latitude: 41.402844, longitude: 2.212845 )),
@@ -87,8 +89,9 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:#selector(mapButtonClicked(_:)))
-        navigationItem.rightBarButtonItem = addButton
+        let addButton = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action:#selector(mapButtonClicked(_:)))
+        let arButton = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action:#selector(arButtonClicked(_:)))
+        navigationItem.rightBarButtonItems = [addButton, arButton]
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
@@ -113,6 +116,11 @@ class MasterViewController: UITableViewController {
     func mapButtonClicked(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "mapDetail", sender: sender)
     }
+    
+    func arButtonClicked(_ sender: AnyObject) {
+//        self.performSegue(withIdentifier: "arDetail", sender: sender)
+        self.showARController()
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
@@ -128,6 +136,9 @@ class MasterViewController: UITableViewController {
             controller.childrenList = self.childList
             controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
             controller.navigationItem.leftItemsSupplementBackButton = true
+        } else if segue.identifier == "arDetail" {
+             let controller = segue.destination as! ChildARViewController
+            controller.childrenList = self.childList
         }
     }
 
